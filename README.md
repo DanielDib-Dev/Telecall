@@ -1,2 +1,3 @@
 # Telecall
  
+Projeto de acadêmico em parceria com a empresa Telecall. Oficialmente meu primeiro site, foi aqui onde comecei a explorar as tags e estilizações, além de funções criadas com o javascript, as que mais se destacam são o dark-mode e a acessibilidade de fontes. Fora isso há também as páginas de formulários, com validações e máscaras de inputs funcionando bem. Agora em meu segundo período da faculdade, estou dando continuidade ao projeto, implementando o back-end em PHP e MySQL.
