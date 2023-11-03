@@ -10,9 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $Senha = $_POST['Senha'];
     $Perfil = $_POST['Perfil'];
 
-    $verifica = mysql_query("SELECT * FROM usuarios WHERE Usuario = '$Usuario' AND Senha = '$Senha' AND Perfil = '$Perfil'") or die("erro ao selecionar");
+    $query = "SELECT * FROM usuarios WHERE Usuario = '$Usuario' AND Senha = '$Senha' AND Perfil = '$Perfil'";
+    $result = $conn->query($query);
 
-    if (mysql_num_rows($verifica)<=0){
+    if (mysql_num_rows($result)<=0){
         echo"<script language='javascript' type='text/javascript'>
         alert('Login e/ou senha incorretos');window.location
         .href='login.html';</script>";
