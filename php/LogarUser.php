@@ -6,7 +6,7 @@ session_start(); // Inicie a sessão no início do script
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $Usuario = $_POST['Usuario'];
     $Senha = $_POST['Senha'];
-    $Tipo = $_POST['Tipo'];
+    $Perfil = $_POST['Perfil'];
 
     $query = "SELECT * FROM usuarios WHERE Usuario = '$Usuario' AND Senha = '$Senha'";
     $result = $conn->query($query);
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       }else{
         // Armazenar informações do usuário na sessão
         $_SESSION['Usuario'] = $Usuario;
-        $_SESSION['Tipo'] = $Tipo;
+        $_SESSION['Perfil'] = $Perfil;
         $_SESSION['Logado'] = TRUE;
         header("Location: ../index.html");
     }
