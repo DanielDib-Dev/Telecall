@@ -2,15 +2,13 @@
 require 'Conexao.php';
 
 session_start(); // Inicie a sessão no início do script
-$_SESSION['Logado'] = FALSE;
-$_SESSION['Usuario'] = 'Área do cliente';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $Usuario = $_POST['Usuario'];
     $Senha = $_POST['Senha'];
-    $Perfil = $_POST['Perfil'];
+    $Tipo = $_POST['Tipo'];
 
-    $query = "SELECT * FROM usuarios WHERE Usuario = '$Usuario' AND Senha = '$Senha' AND Perfil = '$Perfil'";
+    $query = "SELECT * FROM usuarios WHERE Usuario = '$Usuario' AND Senha = '$Senha'";
     $result = $conn->query($query);
 
     if (mysql_num_rows($result)<=0){
@@ -21,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       }else{
         // Armazenar informações do usuário na sessão
         $_SESSION['Usuario'] = $Usuario;
-        $_SESSION['Perfil'] = $Perfil;
+        $_SESSION['Tipo'] = $Tipo;
         $_SESSION['Logado'] = TRUE;
         header("Location: ../index.html");
     }
