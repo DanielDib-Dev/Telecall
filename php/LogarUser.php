@@ -3,7 +3,9 @@ require 'Conexao.php';
 
 session_start(); // Inicie a sessão no início do script
 $_SESSION['Logado'] = FALSE;
-$_SESSION['Usuario'] = 'Área do cliente';
+if (!isset($_SESSION['Usuario'])) {
+    $_SESSION['Usuario'] = 'Área do cliente';
+}
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -24,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['Usuario'] = $Usuario;
         $_SESSION['Perfil'] = $Perfil;
         $_SESSION['Logado'] = TRUE;
-        header("Location: ../index.html");
+        header("Location: ../index.php");
     }
 
     $conn->close();
