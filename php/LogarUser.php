@@ -2,16 +2,19 @@
 require 'Conexao.php';
 
 session_start(); // Inicie a sessão no início do script
+$_SESSION['Logado'] = FALSE;
+$_SESSION['Usuario'] = 'Área do cliente';
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $Usuario = $_POST['Usuario'];
     $Senha = $_POST['Senha'];
     $Perfil = $_POST['Perfil'];
 
-    $query = "SELECT * FROM usuarios WHERE Usuario = '$Usuario' AND Senha = '$Senha'";
+    $query = "SELECT * FROM usuario WHERE Usuario = '$Usuario' AND Senha = '$Senha'";
     $result = $conn->query($query);
 
-    if (mysql_num_rows($result)<=0){
+    if ($result->num_rows <= 0){
         echo"<script language='javascript' type='text/javascript'>
         alert('Login e/ou senha incorretos');window.location
         .href='login.html';</script>";

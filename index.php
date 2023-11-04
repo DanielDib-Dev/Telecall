@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/Estilos.css">
 </head>
 <body>
+    <?php include_once 'php/LogarUser.php'; ?>
     <header>
         <nav class="navbar navbar-expand-xl vermelho-telecall" data-bs-theme="dark">
             <div class="container-fluid">
@@ -92,8 +93,11 @@
                     </ul>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item nav-hover">
-                            <a class="nav-link" href="Login.html" role="button"><p id="cliente">
-                                Área do cliente</p><i class="fa-solid fa-user"></i>
+                            <a class="nav-link" href="Login.html" role="button">
+                                <p id="cliente">
+                                    <?php echo $_SESSION['Usuario']; ?>
+                                </p>
+                                <i class="fa-solid fa-user"></i>
                             </a>
                         </li>
                     </ul>
