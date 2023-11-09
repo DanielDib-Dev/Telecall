@@ -1,7 +1,7 @@
 // Tela de bloqueio SMS programável
 var currentPath = location.pathname;
 
-if (currentPath.includes("SMS.html")) {
+if (currentPath.includes("SMS.php")) {
   var div = document.getElementById('tela-bloqueio');
   var label1 = document.getElementsByClassName('label-telefone')[1];
   var label2 = document.getElementsByClassName('label-telefone')[2];
@@ -100,9 +100,9 @@ $(document).ready(function() {
 });
 
 
-//Saiba mais do mapa do Index.html
+//Saiba mais do mapa do Index.php
 
-if (currentPath.includes("index.html")) {
+if (currentPath.includes("index.php")) {
   const saiba_mais = document.getElementById('map-saibamais');
   const map_move = document.getElementById('map-move');
   saiba_mais.addEventListener('click', function() {
@@ -119,7 +119,7 @@ function scrollToTop() {
 
 //Área do cliente
 
-if (window.location.pathname.includes("Cadastro.html") || window.location.pathname.includes("Login.html")) {
+if (window.location.pathname.includes("Cadastro.php") || window.location.pathname.includes("Login.php")) {
     function manterAberto(valor) {
         const inputElement = $(valor);
         const iBoxElement = inputElement.siblings(".i-box");
@@ -138,7 +138,7 @@ if (window.location.pathname.includes("Cadastro.html") || window.location.pathna
 }
 
 //validação dos campos
-if (currentPath.includes("Cadastro.html")) {
+if (currentPath.includes("Cadastro.php")) {
   $(document).ready(function() {
   //validação do usuário  
       $('#Usuario').keyup(function () {
@@ -312,7 +312,7 @@ if (currentPath.includes("Cadastro.html")) {
     }
   });
   //validação do confirma senha      
-  if (currentPath.includes("Cadastro.html")) {
+  if (currentPath.includes("Cadastro.php")) {
     $(document).ready(function() {
       $('.inputPassword').keyup(function() {
         var senha = $('#Senha').val();
@@ -332,7 +332,7 @@ if (currentPath.includes("Cadastro.html")) {
 
 //Apenas letras input
 
-if (window.location.pathname.includes("Cadastro.html") || window.location.pathname.includes("Login.html")) {
+if (window.location.pathname.includes("Cadastro.php") || window.location.pathname.includes("Login.php")) {
 $(document).ready(function() {
   $('.inputLetra').on('input', function() {
     var inputValue = $(this).val();
@@ -344,7 +344,7 @@ $(document).ready(function() {
 
 //Apenas números input
 
-if (window.location.pathname.includes("Cadastro.html") || window.location.pathname.includes("Login.html")) {
+if (window.location.pathname.includes("Cadastro.php") || window.location.pathname.includes("Login.php")) {
   $(document).ready(function() {
     $('.inputNum').on('input', function() {
       var inputValue = $(this).val();
@@ -355,7 +355,7 @@ if (window.location.pathname.includes("Cadastro.html") || window.location.pathna
   }
   
 //Máscara de cpf
-if (window.location.pathname.includes("Cadastro.html")){
+if (window.location.pathname.includes("Cadastro.php")){
 
   // Função para adicionar a máscara de CPF
   function formatCPF(cpf) {
@@ -504,15 +504,39 @@ $('#cadastro').on('submit', function(event) {
   }
 });
 
-$(document).ready(function() {
-const urlParams = new URLSearchParams(window.location.search);
-        const successParam = urlParams.get("success");
-        // Exibe o modal se o parâmetro "success" estiver presente
-        if (successParam === "true") {
-            document.getElementById("modal").style.display = "block";
-        }
-});
+//Cadastro realizado com sucesso
+if (currentPath.includes("cadastro.php")) {  
+  $(document).ready(function() {
+  const urlParams = new URLSearchParams(window.location.search);
+          const successParam = urlParams.get("success");
+          // Exibe o modal se o parâmetro "success" estiver presente
+          if (successParam === "true") {
+              document.getElementById("modal").style.display = "block";
+          }
+  });
+}
 
+if (currentPath.includes("Login.php")) {
+//Falha no login
+$(document).ready(function() {
+  const urlParams = new URLSearchParams(window.location.search);
+          const successParam = urlParams.get("success");
+          // Exibe o modal se o parâmetro "success" estiver presente
+          if (successParam === "false") {
+              document.getElementById("modal-erro").style.display = "block";
+          }
+  });
+
+//Sucesso no login
+$(document).ready(function() {
+  const urlParams = new URLSearchParams(window.location.search);
+          const successParam = urlParams.get("success");
+          // Exibe o modal se o parâmetro "success" estiver presente
+          if (successParam === "true") {
+              document.getElementById("modal-sucesso").style.display = "block";
+          }
+  });
+}
 //acessibilidade de fontes
 
 $(document).ready(function() {

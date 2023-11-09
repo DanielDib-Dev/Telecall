@@ -10,23 +10,20 @@ if (!isset($_SESSION['Usuario'])) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $Usuario = $_POST['Usuario'];
-    $Senha = $_POST['Senha'];
+    $Senha = hash("SHA256", $_POST['Senha']);
     $Perfil = $_POST['Perfil'];
 
-    $query = "SELECT * FROM usuario WHERE Usuario = '$Usuario' AND Senha = '$Senha'";
+    $query = "SELECT * FROM usuario WHERE Usuario = '$Usuario' AND Senha = '$Senha' AND Perfil = '$Perfil'";
     $result = $conn->query($query);
 
     if ($result->num_rows <= 0){
-        echo"<script language='javascript' type='text/javascript'>
-        alert('Login e/ou senha incorretos');window.location
-        .href='login.html';</script>";
-        die();
+        header("Location: ../Login.php?success=false");
       }else{
         // Armazenar informações do usuário na sessão
         $_SESSION['Usuario'] = $Usuario;
         $_SESSION['Perfil'] = $Perfil;
         $_SESSION['Logado'] = TRUE;
-        header("Location: ../index.php");
+        header("Location: ../Login.php?success=true");
     }
 
     $conn->close();
