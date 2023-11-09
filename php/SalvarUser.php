@@ -2,19 +2,19 @@
 require 'Conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $Usuario = $_POST['Usuario'];
-    $Nome = $_POST['Nome'];
-    $CPF = $_POST['CPF'];
-    $DataNasc = $_POST['DataNasc'];
-    $Genero = $_POST['Genero'];
-    $NomeM = $_POST['NomeM'];
-    $Tel = $_POST['Tel'];
-    $Cel = $_POST['Cel'];
-    $Endereco = $_POST['Endereco'];
-    $Senha = hash("SHA256", $_POST['Senha']);
-    $Perfil = $_POST['Perfil'];
+    $usuario = $_POST['usuario'];
+    $nome = $_POST['nome'];
+    $cpf = $_POST['cpf'];
+    $dataNasc = $_POST['dataNasc'];
+    $genero = $_POST['genero'];
+    $nomeM = $_POST['nomeM'];
+    $tel = $_POST['tel'];
+    $cel = $_POST['cel'];
+    $endereco = $_POST['endereco'];
+    $senha = hash("SHA256", $_POST['senha']);
+    $perfil = $_POST['perfil'];
 
-    $sql = "INSERT INTO usuario (Usuario, Nome, CPF, DataNasc, Genero, NomeM, Tel, Cel, Endereco, Senha, Perfil) VALUES ('$Usuario', '$Nome', '$CPF', '$DataNasc', '$Genero', '$NomeM', '$Tel', '$Cel', '$Endereco', '$Senha', $Perfil)";
+    $sql = "INSERT INTO usuario (usuario, nome, cpf, dataNasc, genero, nomeM, tel, cel, endereco, senha, perfil) VALUES ('$usuario', '$nome', '$cpf', '$dataNasc', '$genero', '$nomeM', '$tel', '$cel', '$endereco', '$senha', $perfil)";
 
     if ($conn->query($sql) === TRUE) {
         header("Location: ../cadastro.php?success=true");

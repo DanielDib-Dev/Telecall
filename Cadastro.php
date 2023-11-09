@@ -17,31 +17,31 @@
             <form id="cadastro" action="php/SalvarUser.php" method="post">
                 <h2>Cadastre-se</h2>
                 <div class="inputBox">
-                    <input type="text" id="Usuario" class="inputText inputLetra" required="required" name="Usuario" title="" onchange="manterAberto(this);" maxlength="6" data-error="userErro">
+                    <input type="text" id="Usuario" class="inputText inputLetra" required="required" name="usuario" title="" onchange="manterAberto(this);" maxlength="6" data-error="userErro">
                     <span class="span-placeholder"><i class="fa-solid fa-user"></i> Usuário</span>
                     <i class="i-box"></i>
                 </div>
                 <span id="userErro" class="span-erro">O campo "usuário" deve possuir exatamente 6 caracteres alfabéticos</span>
                 <div class="inputBox">
-                    <input type="text" id="Nome" class="inputText inputLetra" required="required" name="Nome" title="" onchange="manterAberto(this);" maxlength="80" data-error="nomeErro">
+                    <input type="text" id="Nome" class="inputText inputLetra" required="required" name="nome" title="" onchange="manterAberto(this);" maxlength="80" data-error="nomeErro">
                     <span class="span-placeholder"><i class="fa-solid fa-signature"></i> Nome completo</span>
                     <i class="i-box"></i>
                 </div>
                 <span id="nomeErro" class="span-erro">O campo "nome completo" deve possuir entre 15 e 80 caracteres alfabéticos</span>
                 <div class="inputBox">
-                    <input type="text" id="CPF" class="inputText" required="required" name="CPF" title="" onchange="manterAberto(this);" maxlength="14">
+                    <input type="text" id="CPF" class="inputText" required="required" name="cpf" title="" onchange="manterAberto(this);" maxlength="14">
                     <span class="span-placeholder"><i class="fa-regular fa-id-card"></i> CPF</span>
                     <i class="i-box"></i>
                 </div>
                 <span id="cpfErro" class="span-erro">O campo "CPF" deve ser válido</span>
                 <div class="inputBox">
-                    <input type="text" id="DataNasc" class="inputText" required="required" name="DataNasc" title="" onchange="manterAberto(this);" maxlength="10" data-error="nascimentoErro">
+                    <input type="text" id="DataNasc" class="inputText" required="required" name="dataNasc" title="" onchange="manterAberto(this);" maxlength="10" data-error="nascimentoErro">
                     <span class="span-placeholder"><i class="fa-regular fa-calendar"></i> Data de nascimento</span>
                     <i class="i-box"></i>
                 </div>
                 <span id="nascimentoErro" class="span-erro">O campo "data de nascimento" deve ser preenchido corretamente</span>
                 <div class="inputBox inputGen">
-                    <select class="inputText" id="Genero" name="Genero" required="required" placeholder="Gênero" title="Selecione um gênero da lista." onchange="manterAberto(this);" data-error="generoErro">
+                    <select class="inputText" id="Genero" name="genero" required="required" placeholder="Gênero" title="Selecione um gênero da lista." onchange="manterAberto(this);" data-error="generoErro">
                         <option value="" disabled selected></option>
                         <option value="masc">Masculino</option>
                         <option value="fem">Feminino</option>
@@ -52,43 +52,43 @@
                 </div>
                 <span id="generoErro" class="span-erro">O campo "gênero" deve ser preenchido</span>
                 <div class="inputBox">
-                    <input type="text" id="NomeM" class="inputText inputLetra" required="required" name="NomeM" title="" onchange="manterAberto(this);" maxlength="80" data-error="maeErro">
+                    <input type="text" id="NomeM" class="inputText inputLetra" required="required" name="nomeM" title="" onchange="manterAberto(this);" maxlength="80" data-error="maeErro">
                     <span class="span-placeholder"><i class="fa-solid fa-signature"></i> Nome da mãe</span>
                     <i class="i-box"></i>
                 </div>
                 <span id="maeErro" class="span-erro">O campo "nome da mãe" deve possuir entre 15 e 80 caracteres alfabéticos</span>
                 <div class="inputBox">
-                    <input type="tel" id="Tel" class="inputText inputNum" required="required" name="Tel" title="" onchange="manterAberto(this);" maxlength="16" data-error="fixoErro">
+                    <input type="tel" id="Tel" class="inputText inputNum" required="required" name="tel" title="" onchange="manterAberto(this);" maxlength="16" data-error="fixoErro">
                     <span class="span-placeholder"><i class="fa-solid fa-phone"></i> Telefone fixo</span>
                     <i class="i-box"></i>
                 </div>
                 <span id="fixoErro" class="span-erro">O campo "telefone fixo" deve ser preenchido</span>
                 <div class="inputBox">
-                    <input type="tel" id="Cel" class="inputText inputNum" required="required" name="Cel" title="" onchange="manterAberto(this);" maxlength="16" data-error="celularErro">
+                    <input type="tel" id="Cel" class="inputText inputNum" required="required" name="cel" title="" onchange="manterAberto(this);" maxlength="16" data-error="celularErro">
                     <span class="span-placeholder"><i class="fa-solid fa-mobile-screen-button"></i>Telefone celular</span>
                     <i class="i-box"></i>
                 </div>
                 <span id="celularErro" class="span-erro">O campo "telefone celular" deve ser preenchido</span>
                 <div class="inputBox">
-                    <input type="text" id="Endereco" class="inputText" required="required" name="Endereco" title="" onchange="manterAberto(this);" data-error="enderecoErro">
+                    <input type="text" id="Endereco" class="inputText" required="required" name="endereco" title="" onchange="manterAberto(this);" data-error="enderecoErro">
                     <span class="span-placeholder"><i class="fa-solid fa-house"></i> Endereço completo</span>
                     <i class="i-box"></i>
                 </div>
                 <span id="enderecoErro" class="span-erro">O campo "endereço completo" deve ser preenchido</span>
                 <div class="inputBox">
-                    <input type="password" id="Senha" class="inputText inputPassword inputLetra" required="required" name="Senha" title="" oninput="manterAberto(this);" maxlength="8" data-error="senhaErro">
+                    <input type="password" id="Senha" class="inputText inputPassword inputLetra" required="required" name="senha" title="" oninput="manterAberto(this);" maxlength="8" data-error="senhaErro">
                     <i class="fa-solid fa-eye"></i>
                     <span class="span-placeholder"><i class="fa-solid fa-lock"></i> Senha</span>
                     <i class="i-box"></i>
                 </div>
                 <span id="senhaErro" class="span-erro">O campo "senha" deve ter 8 caracteres alfabéticos.</span>
                 <div class="inputBox">
-                    <input type="password" id="Confirma" class="inputText inputPassword inputLetra" required="required" name="Confirma" title="" oninput="manterAberto(this);" maxlength="8" data-error="confirmaErro">
+                    <input type="password" id="Confirma" class="inputText inputPassword inputLetra" required="required" name="confirma" title="" oninput="manterAberto(this);" maxlength="8" data-error="confirmaErro">
                     <i class="fa-solid fa-eye"></i>
                     <span class="span-placeholder"><i class="fa-solid fa-lock"></i> Confirmar Senha</span>
                     <i class="i-box"></i>
                 </div>
-                <input type="hidden" id="Perfil" name="Perfil" value="1">
+                <input type="hidden" id="Perfil" name="perfil" value="1">
                 <span id="confirmaErro" class="span-erro">Os campos "senha" e "confirmar senha" devem ser iguais.</span>
                 <div class="links">
                     <a href="Login.php" class="criarconta">Já possui conta? Entre aqui</a>

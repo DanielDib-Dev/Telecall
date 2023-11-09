@@ -81,14 +81,14 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item nav-hover">
                             <?php 
-                                if(isset($_SESSION['Perfil'])){
+                                if(isset($_SESSION['perfil'])){
                                     echo '<a class="nav-link" href="Perfil.php" role="button">';
                                 }else{
                                     echo '<a class="nav-link" href="Login.php" role="button">';
                                 }
                             ?>
                                 <p id="cliente">
-                                    <?php echo $_SESSION['Usuario']; ?>
+                                    <?php echo $_SESSION['usuario']; ?>
                                 </p>
                                 <i class="fa-solid fa-user"></i>
                             </a>

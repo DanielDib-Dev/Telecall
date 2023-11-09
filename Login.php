@@ -17,19 +17,19 @@
             <form id="login" action="php/LogarUser.php" method="post">
                 <h2>Entre na conta</h2>
                 <div class="inputBox">
-                    <input type="text" class="inputText inputLetra" required name="Usuario" title="" onchange="manterAberto(this);" maxlength="6" autocomplete="off">
+                    <input type="text" class="inputText inputLetra" required name="usuario" title="" onchange="manterAberto(this);" maxlength="6" autocomplete="off">
                     <span class="span-placeholder"><i class="fa-solid fa-user"></i> Usuário</span>
                     <i class="i-box"></i>
                 </div>
                 <div class="inputBox">
-                    <input type="password" class="inputText inputPassword inputLetra" required name="Senha"  title="" oninput="manterAberto(this);" maxlength="8" autocomplete="off">
+                    <input type="password" class="inputText inputPassword inputLetra" required name="senha"  title="" oninput="manterAberto(this);" maxlength="8" autocomplete="off">
                     <i class="fa-solid fa-eye"></i>
                     <span class="span-placeholder"><i class="fa-solid fa-lock"></i> Senha</span>
                     <i class="i-box"></i>
                 </div>
                 <span id="senhaErro" class="span-erro">O campo "senha" deve ser preenchido</span>
                 <div class="inputBox">
-                    <select class="inputText" id="Perfil" name="Perfil" required placeholder="Tipo de Perfil" title="Selecione um tipo de perfil." onchange="manterAberto(this);">
+                    <select class="inputText" id="Perfil" name="perfil" required placeholder="Tipo de Perfil" title="Selecione um tipo de perfil." onchange="manterAberto(this);">
                         <option value="" disabled selected></option>
                         <option value="1">Perfil Comum</option>
                         <option value="2">Perfil Master</option>
