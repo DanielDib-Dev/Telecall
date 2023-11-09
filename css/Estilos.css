@@ -1755,3 +1755,39 @@ div, img{
 .modelo img{
     width: 50%;
 }
+
+.perfilP{
+    margin: 0;
+    font-size: 20px;
+    color: #000 !important;
+    font-weight: 600;
+}
+
+.perfilDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.perfilImg{
+    width: 200px;
+    padding-bottom: 20px;
+}
+
+.perfilCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: var(--cor-fundinho);
+}
+
+.perfilDivP{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

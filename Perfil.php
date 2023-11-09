@@ -15,16 +15,20 @@
     <div class="content">
         <button id="scrollToTopButton" onclick="scrollToTop()">&#9650;</button>
         <div id="content" class="white_2FA">
-            <div id="perfilDiv">
-                <img class="perfilImg" src="imagens/perfil.png">
-                <p class="perfilP">Usuário: <?php echo $_SESSION['usuario']; ?></p>
-                <p class="perfilP">Nome: <?php echo $_SESSION['nome']; ?></p>
-                <p class="perfilP">Data de nascimento: <?php echo $_SESSION['dataNasc']; ?></p>
-                <p class="perfilP">Gênero: <?php echo $_SESSION['genero']; ?></p>
-                <p class="perfilP">Nome da mãe: <?php echo $_SESSION['nomeM']; ?></p>
-                <p class="perfilP">Telefone: <?php echo $_SESSION['tel']; ?></p>
-                <p class="perfilP">Celular: <?php echo $_SESSION['cel']; ?></p>
-                <p class="perfilP">Endereço: <?php echo $_SESSION['endereco']; ?></p>
+            <div class="perfilDiv">
+                <div class="perfilCard">
+                    <img class="perfilImg" src="imagens/perfil.png">
+                    <div class="perfilDivP">
+                        <p class="perfilP">Usuário: <?php echo $_SESSION['usuario']; ?></p>
+                        <p class="perfilP">Nome: <?php echo $_SESSION['nome']; ?></p>
+                        <p class="perfilP">Data de nascimento: <?php echo $_SESSION['dataNasc']; ?></p>
+                        <p class="perfilP">Gênero: <?php echo $_SESSION['genero']; ?></p>
+                        <p class="perfilP">Nome da mãe: <?php echo $_SESSION['nomeM']; ?></p>
+                        <p class="perfilP">Telefone: <?php echo $_SESSION['tel']; ?></p>
+                        <p class="perfilP">Celular: <?php echo $_SESSION['cel']; ?></p>
+                        <p class="perfilP">Endereço: <?php echo $_SESSION['endereco']; ?></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
