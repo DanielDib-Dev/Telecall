@@ -13,7 +13,6 @@
 <body>
     <?php include_once 'header.php'; ?>
     <div class="content">
-        <button id="scrollToTopButton" onclick="scrollToTop()">&#9650;</button>
         <div id="content" class="white_2FA">
             <div class="perfilDiv">
                 <div class="perfilCard">
@@ -28,6 +27,9 @@
                         <p class="perfilP">Celular: <?php echo $_SESSION['cel']; ?></p>
                         <p class="perfilP">Endereço: <?php echo $_SESSION['endereco']; ?></p>
                     </div>
+                    <form action="php/Deslogar.php">
+                        <button type="submit"><i class="fas fa-right-from-bracket"></i></button>                        
+                    </form>
                 </div>
             </div>
         </div>

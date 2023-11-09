@@ -1784,6 +1784,16 @@ div, img{
     padding: 20px;
     border-radius: 30px;
     background-color: var(--cor-fundinho);
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.3);
+}
+
+.perfilCard form button{
+    background-color: var(--cor-fundinho);
+    border: 0;
+    color: #000 !important;
+    transition: background-color 0.5s;
+    font-size: 50px;
+    height: 50px;
 }
 
 .perfilDivP{
