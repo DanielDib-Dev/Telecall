@@ -15,7 +15,8 @@
     <div class="content">
         <button id="scrollToTopButton" onclick="scrollToTop()">&#9650;</button>
         <div id="content" class="white_2FA">
-            <div>
+            <div id="perfilDiv">
+                <img class="perfilImg" src="imagens/perfil.png">
                 <p class="perfilP">Usuário: <?php echo $_SESSION['usuario']; ?></p>
                 <p class="perfilP">Nome: <?php echo $_SESSION['nome']; ?></p>
                 <p class="perfilP">Data de nascimento: <?php echo $_SESSION['dataNasc']; ?></p>

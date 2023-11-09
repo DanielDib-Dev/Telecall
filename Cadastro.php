@@ -43,9 +43,9 @@
                 <div class="inputBox inputGen">
                     <select class="inputText" id="Genero" name="genero" required="required" placeholder="Gênero" title="Selecione um gênero da lista." onchange="manterAberto(this);" data-error="generoErro">
                         <option value="" disabled selected></option>
-                        <option value="masc">Masculino</option>
-                        <option value="fem">Feminino</option>
-                        <option value="outro">Outro</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Outro">Outro</option>
                     </select>
                     <span class="span-placeholder"><i class="fa-solid fa-venus-mars"></i> Gênero</span>
                     <i class="i-box"></i>
