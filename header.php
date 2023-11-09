@@ -80,7 +80,13 @@
                     </ul>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item nav-hover">
-                            <a class="nav-link" href="Login.php" role="button">
+                            <?php 
+                                if(isset($_SESSION['Perfil'])){
+                                    echo '<a class="nav-link" href="Perfil.php" role="button">';
+                                }else{
+                                    echo '<a class="nav-link" href="Login.php" role="button">';
+                                }
+                            ?>
                                 <p id="cliente">
                                     <?php echo $_SESSION['Usuario']; ?>
                                 </p>
