@@ -23,20 +23,20 @@ DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuario` (
-  `IdUsuario` int(11) NOT NULL AUTO_INCREMENT,
-  `Usuario` varchar(40) DEFAULT NULL,
-  `Nome` varchar(80) DEFAULT NULL,
-  `CPF` varchar(20) DEFAULT NULL,
-  `DataNasc` varchar(10) DEFAULT NULL,
-  `Genero` varchar(5) DEFAULT NULL,
-  `NomeM` varchar(80) DEFAULT NULL,
-  `Tel` varchar(20) DEFAULT NULL,
-  `Cel` varchar(20) DEFAULT NULL,
-  `Endereco` varchar(200) DEFAULT NULL,
-  `Senha` varchar(8) DEFAULT NULL,
-  `Perfil` int(1) DEFAULT NULL,
-  PRIMARY KEY (`IdUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `idUsuario` int(11) NOT NULL AUTO_INCREMENT,
+  `usuario` varchar(40) DEFAULT NULL,
+  `nome` varchar(80) DEFAULT NULL,
+  `cpf` varchar(20) DEFAULT NULL,
+  `dataNasc` varchar(10) DEFAULT NULL,
+  `genero` varchar(10) DEFAULT NULL,
+  `nomeM` varchar(80) DEFAULT NULL,
+  `tel` varchar(20) DEFAULT NULL,
+  `cel` varchar(20) DEFAULT NULL,
+  `endereco` varchar(200) DEFAULT NULL,
+  `senha` varchar(200) DEFAULT NULL,
+  `perfil` int(1) DEFAULT NULL,
+  PRIMARY KEY (`idUsuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'master','master','000.000.000-00','26/05/1998','masc','mastermom','0','0','rua do quimico 58 - bangu, rj','abcdefgh',2),(8,'aaaaaa','aaaaaaaaaaaaaaaaaaa','183.233.927-06','24/09/2001','masc','aaaaaaaaaaaaaaaaaaa','(+55)11-11111111','(+55)11-11111111','aaaaaaaaaaa','aaaaaaaa',1),(9,'aaaaaa','aaaaaaaaaaaaaaaa','760.985.350-00','25/09/2001','masc','aaaaaaaaaaaaaaaa','(+55)11-11111111','(+55)11-11111111','aaaaaaaaaaaaaaaa','aaaaaaaa',1);
+INSERT INTO `usuario` VALUES (1,'Daniel','Daniel Dib Lopes','183.233.927-06','24/09/2001','Masculino','Luciana Dib Lopes','(+55)11-11111111','(+55)11-11111111','Rua Bangu, 206','1f3ce40415a2081fa3eee75fc39fff8e56c22270d1a978a7249b592dcebd20b4',1),(2,'Osiris','Osiris da Silva','866.329.287-22','21/06/2005','Outro','Jacinto Pinto Aquino Regus','(+55)21-96924427','(+55)21-96924427','Rua Bangu 206','1f3ce40415a2081fa3eee75fc39fff8e56c22270d1a978a7249b592dcebd20b4',1);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-06 18:33:52
+-- Dump completed on 2023-11-10 18:24:39

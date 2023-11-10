@@ -23,13 +23,13 @@ DROP TABLE IF EXISTS `relatorio`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `relatorio` (
-  `IdRelatorio` int(11) NOT NULL AUTO_INCREMENT,
-  `DataAcesso` date DEFAULT NULL,
-  `TwoFact` varchar(20) DEFAULT NULL,
-  `IdUsuario` int(11) DEFAULT NULL,
-  PRIMARY KEY (`IdRelatorio`),
-  KEY `IdUsuario` (`IdUsuario`),
-  CONSTRAINT `relatorio_ibfk_1` FOREIGN KEY (`IdUsuario`) REFERENCES `usuario` (`IdUsuario`)
+  `idRelatorio` int(11) NOT NULL,
+  `dataAcesso` date DEFAULT NULL,
+  `twoFact` varchar(20) DEFAULT NULL,
+  `idUsuario` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idRelatorio`),
+  KEY `IdUsuario` (`idUsuario`),
+  CONSTRAINT `relatorio_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-06 18:33:51
+-- Dump completed on 2023-11-10 18:24:39
