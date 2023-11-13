@@ -59,6 +59,7 @@ $(document).ready(function() {
     $("body").css("--cor-celularnoti", "#202020a6");
     $(".dark-img").css("filter", "brightness(10)");
     $(".invert-img").css("filter", "invert(100%)");
+    $(".soft-invert-img").css("filter", "invert(85%)");
     $(".red-img").css("filter", "hue-rotate(155deg) saturate(300%)");
     $(".content-cliente").css("background", "var(--cor-fundo2) url(../Projeto/imagens/bg2.png)");
   }
@@ -75,6 +76,7 @@ $(document).ready(function() {
     $("body").css("--cor-celularnoti", "#bdbdbda6");
     $(".dark-img").css("filter", "brightness(0)");
     $(".invert-img").css("filter", "invert(0%)");
+    $(".soft-invert-img").css("filter", "invert(0%)");
     $(".red-img").css("filter", "none");
     $(".content-cliente").css("background", "var(--cor-fundo2) url(../Projeto/imagens/bg.png)");
   }

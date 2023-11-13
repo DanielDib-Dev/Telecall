@@ -1465,9 +1465,15 @@ div, img{
 .dark-img{
     filter: brightness(0);
 }
+
 .invert-img{
     filter: none;
 }
+
+.soft-invert-img{
+    filter: none;
+}
+
 
 @media (max-width: 1199px){
     .navbar-collapse{
@@ -1748,12 +1754,26 @@ div, img{
     align-self: center;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    padding: 50px;
     gap: 50px;
+    transition: 0.5s;
+}
+
+@media (max-width: 600px) {
+    .modelo {
+        padding: 50px 10px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .modelo{
+        padding: 50px 200px;
+    }
 }
 
 .modelo img{
-    width: 50%;
+    width: 100%;
+    border-radius: 20px;
 }
 
 .perfilP{
@@ -1768,7 +1788,7 @@ div, img{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 50px;
+    padding: 50px 0 50px;
 }
 
 .perfilImg{
@@ -1800,4 +1820,21 @@ div, img{
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+
+#logout{
+    background-color: transparent;
+    border: none;
+    color: var(--cor-letra);
+    padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);;
+    transition: 0s !important;
+}
+
+#formLogout:hover{
+    background-color: rgb(230, 230, 230);
+    transition: 0.3s;
+}
+
+#formLogout:hover, #logout:hover{
+    color: #000;
 }

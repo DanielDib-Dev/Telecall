@@ -78,22 +78,44 @@
                             </ul>
                         </li>
                     </ul>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item nav-hover">
-                            <?php 
-                                if(isset($_SESSION['perfil'])){
-                                    echo '<a class="nav-link" href="Perfil.php" role="button">';
-                                }else{
-                                    echo '<a class="nav-link" href="Login.php" role="button">';
-                                }
-                            ?>
-                                <p id="cliente">
-                                    <?php echo $_SESSION['usuario']; ?>
-                                </p>
-                                <i class="fa-solid fa-user"></i>
-                            </a>
-                        </li>
-                    </ul>
+                    <?php 
+                        if(isset($_SESSION['perfil'])){
+                            echo '
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link nav-hover" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        '.$_SESSION["usuario"].' <i class="fa-solid fa-user"></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="Perfil.php">
+                                                Perfil
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <form id="formLogout" action="php/Deslogar.php">
+                                                <button id="logout" type="submit">Sair</button>                        
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            ';
+                        }else{
+                            echo '
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item nav-hover">
+                                    <a class="nav-link" href="Login.php" role="button">
+                                        <p id="cliente">'.
+                                            $_SESSION["usuario"].'
+                                        </p>
+                                        <i class="fa-solid fa-user"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            ';
+                        }
+                    ?>
                 </div>
             </div>
         </nav>

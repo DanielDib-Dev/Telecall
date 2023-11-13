@@ -15,7 +15,7 @@
     <div id="content">
         <div class="modelo">
             <h1>Modelo do Banco de Dados</h1>
-            <img src="imagens/ModeloDB.jpg">    
+            <img class="soft-invert-img" src="imagens/ModeloDB.jpg">    
         </div>
     </div>
     <footer>
