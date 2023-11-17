@@ -2,7 +2,6 @@
 require 'Conexao.php';
 
 session_start(); // Inicie a sessão no início do script
-$_SESSION['logado'] = FALSE;
 if (!isset($_SESSION['usuario'])) {
     $_SESSION['usuario'] = 'Área do cliente';
 }
@@ -20,6 +19,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: ../Login.php?success=false");
       }else{
         $row = $result->fetch_assoc();
+        if($row['perfil'] == 1){
+            $_SESSION['usuario2FA'] = $row['usuario'];
+            $_SESSION['nome2FA'] = $row['nome'];
+            $_SESSION['dataNasc2FA'] = $row['dataNasc'];
+            $_SESSION['genero2FA'] = $row['genero'];
+            $_SESSION['nomeM2FA'] = $row['nomeM'];
+            $_SESSION['tel2FA'] = $row['tel'];
+            $_SESSION['cel2FA'] = $row['cel'];
+            $_SESSION['endereco2FA'] = $row['endereco'];
+            $_SESSION['perfil2FA'] = $row['perfil'];
+            header("Location: ../2FAUser.php");
+            exit();
+        }
         // Armazenar informações do usuário na sessão
         $_SESSION['usuario'] = $row['usuario'];
         $_SESSION['nome'] = $row['nome'];

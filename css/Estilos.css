@@ -1481,9 +1481,6 @@ div, img{
         gap: 0px;
         padding: 10px;
     }   
-    .navbar-collapse label{
-        margin: 0 0 0 10px;
-    } 
     .label-dark-mode{
         top: 50%;
         left: 50%;
@@ -1825,16 +1822,13 @@ div, img{
 #logout{
     background-color: transparent;
     border: none;
-    color: var(--cor-letra);
-    padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);;
-    transition: 0s !important;
+    font-size: 25px;
+    padding: 0 5px;
 }
 
-#formLogout:hover{
-    background-color: rgb(230, 230, 230);
-    transition: 0.3s;
-}
-
-#formLogout:hover, #logout:hover{
-    color: #000;
+@media (min-width: 1200px){
+    .navbar-expand-xl .navbar-nav .nav-link {
+        padding-right: 0.4rem;
+        padding-left: 0.4rem;
+    }
 }
