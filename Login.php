@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/Estilos.css">
 </head>
 <body>
-    <?php include_once 'header.php'; ?>
+    <?php include_once 'header.php';?>
     <div class="content-cliente">
         <div class="box"  data-aos="zoom-in">
             <form id="login" action="php/LogarUser.php" method="post">

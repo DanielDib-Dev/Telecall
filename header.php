@@ -1,4 +1,11 @@
-<?php include_once 'php/LogarUser.php'; ?>
+<?php 
+    include_once 'php/LogarUser.php'; 
+    $caminhoAtual = $_SERVER['PHP_SELF'];
+    if(isset($_SESSION['logado']) && $_SESSION['logado'] === FALSE && strpos($caminhoAtual, "2FAUser.php") == false){
+         session_destroy();
+         header("Location: Login.php?success=false");
+    }
+?>
 <header>
         <nav class="navbar navbar-expand-xl vermelho-telecall" data-bs-theme="dark">
             <div class="container-fluid">
