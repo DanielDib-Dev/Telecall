@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['cel2FA'] = $row['cel'];
             $_SESSION['endereco2FA'] = $row['endereco'];
             $_SESSION['perfil2FA'] = $row['perfil'];
+            $_SESSION['logado'] = FALSE;
             header("Location: ../2FAUser.php");
             exit();
         }
