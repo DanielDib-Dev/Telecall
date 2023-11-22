@@ -4,14 +4,6 @@ require 'Conexao.php';
 session_start(); // Inicie a sessão no início do script
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $usuario = $_SESSION['usuario2FA'];
-        $nome = $_SESSION['nome2FA'];
-        $dataNasc = $_SESSION['dataNasc2FA'];
-        $genero = $_SESSION['genero2FA'];
-        $nomeM = $_SESSION['nomeM2FA'];
-        $tel = $_SESSION['tel2FA'];
-        $cel = $_SESSION['cel2FA'];
-        $endereco = $_SESSION['endereco2FA'];
-        $perfil = $_SESSION['perfil2FA'];
         if (isset($_POST['nomeM'])) {
                 $nomeM = $_POST['nomeM'];
                 $query = "SELECT * FROM usuario WHERE nomeM = '$nomeM' AND usuario = '$usuario'";
@@ -25,17 +17,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = $conn->query($query);
 
         if ($result->num_rows <= 0){
-                header("Location: ../Login.php?success=false");
+                //header("Location: ../Login.php?success=false");
+                var_dump($result);
         }else{
-                $_SESSION['usuario'] = $usuario;
-                $_SESSION['nome'] = $nome;
-                $_SESSION['dataNasc'] = $dataNasc;
-                $_SESSION['genero'] = $genero;
-                $_SESSION['nomeM'] = $nomeM;
-                $_SESSION['tel'] = $tel;
-                $_SESSION['cel'] = $cel;
-                $_SESSION['endereco'] = $endereco;
-                $_SESSION['perfil'] = $perfil;
+                $_SESSION['usuario'] = $_SESSION['usuario2FA'];
+                $_SESSION['nome'] = $_SESSION['nome2FA'];
+                $_SESSION['dataNasc'] = $_SESSION['dataNasc2FA'];
+                $_SESSION['genero'] = $_SESSION['genero2FA'];
+                $_SESSION['nomeM'] = $_SESSION['nomeM2FA'];
+                $_SESSION['tel'] = $_SESSION['tel2FA'];
+                $_SESSION['cel'] = $_SESSION['cel2FA'];
+                $_SESSION['endereco'] = $_SESSION['endereco2FA'];
+                $_SESSION['perfil'] = $_SESSION['perfil2FA'];
                 $_SESSION['logado'] = TRUE;
                 $chavesParaRemover = array(
                         'usuario2FA',

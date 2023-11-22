@@ -13,28 +13,38 @@
 <body>
     <?php include_once 'header.php'; ?>
     <div id="content">
-        <h2 id="twofactor">Segundo fator de autenticação</h2>
-        <form action="php/Valida2FA.php" method="post">
-            <div class="input-2fa">
-                <?php 
+    <div class="content-cliente">
+        <div class="box"  data-aos="zoom-in">
+            <form id="login" action="php/Valida2FA.php" method="post">
+                <h2>Segundo fator de autenticação</h2>
+                <div class="inputBox">
+                    <?php 
                     $perguntas = array("nomeM", "endereco", "dataNasc");
                     $perguntaEscolhida = $perguntas[array_rand($perguntas)];
                     switch ($perguntaEscolhida) {
                         case "nomeM":
-                            echo'<p id="ptwofactor">Qual o nome da sua mãe?</p>';
+                            $pergunta = 'Qual o nome da sua mãe?';
                             break;
                         case "endereco":
-                            echo'<p id="ptwofactor">Qual o seu endereço?</p>';
+                            $pergunta = 'Qual o seu endereço?';
                             break;
                         case "dataNasc":
-                            echo'<p id="ptwofactor">Qual sua data de nascimento?</p>';
+                            $pergunta = 'Qual sua data de nascimento?';
                             break;
                     }
-                    echo'<input type="text" name="'.$perguntaEscolhida.'" id="'.$perguntaEscolhida.'" placeholder="Resposta">';
+                    var_dump($perguntaEscolhida);
+                    echo'<input type="text" class="inputText" required name="'.$perguntaEscolhida.'" id="'.$perguntaEscolhida.'">
+                    <span class="span-placeholder"><i class="fa-solid fa-lock"></i> '.$pergunta.'</span>
+                    <i class="i-box"></i>';
                 ?>
-            </div>                    
-            <input type="submit" value="Confirmar" id="verify">
-        </form>
+                </div>
+                <span id="senhaErro" class="span-erro">O campo "senha" deve ser preenchido</span>
+                <div class="form-botoes">
+                    <input type="reset" class="botao-form" value="Resetar">
+                    <input type="submit" class="botao-form" value="Enviar">
+                </div>
+            </form>
+        </div>
     </div>
     <footer>
         <div id="footer_content">

@@ -41,8 +41,8 @@
                     <a href="Cadastro.php" class="criarconta">Crie uma conta</a>
                 </div>
                 <div class="form-botoes">
-                    <input type="submit" class="botao-form" value="Entrar">
                     <input type="reset" class="botao-form" value="Resetar">
+                    <input type="submit" class="botao-form" value="Entrar">
                 </div>
             </form>
         </div>

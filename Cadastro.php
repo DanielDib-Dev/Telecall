@@ -94,8 +94,8 @@
                     <a href="Login.php" class="criarconta">Já possui conta? Entre aqui</a>
                 </div>
                 <div class="form-botoes">
-                    <input type="submit" class="botao-form" value="Criar" id="submit">
                     <input type="reset" class="botao-form" value="Resetar">
+                    <input type="submit" class="botao-form" value="Criar" id="submit">
                 </div>
             </form>
         </div>
