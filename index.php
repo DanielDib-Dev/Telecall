@@ -216,56 +216,7 @@
             </div>
         </div>
     </div>
-    <footer>
-        <div id="footer_content">
-            <ul class="footer_list">
-                <li>
-                    <h3>Serviços</h3>
-                </li>
-                <li>
-                    <a href="2FA.html" class="footer_link">2FA</a>
-                </li>
-                <li>
-                    <a href="NumeroMascara.html" class="footer_link">Número Máscara</a>
-                </li>
-                <li>
-                    <a href="GVC.html" class="footer_link">Google Verified Calls</a>
-                </li>
-                <li>
-                    <a href="SMS.html" class="footer_link">SMS Programável</a>
-                </li>
-            </ul>
-	        <ul class="footer_list">
-		        <li>
-		        	<h3>Sobre nós</h3>
-		        </li>
-		        <li>
-		        	<a href="SobreNos.html" class="footer_link">Institucional</a>
-		        </li>
-		        <li>
-		        	<a href="index.html#oquee" class="footer_link">CPaaS</a>
-		        </li>
-		        <li>
-		        	<a href="PoliticaPrivacidade.html" class="footer_link">Política e Privacidade</a>
-		        </li>
-	        </ul>
-            <div id="footer_contacts">
-                <h3>Contatos</h3>
-                <a href="https://www.facebook.com/TelecallBr" id="facebook">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-                <a href="https://www.instagram.com/telecallbr/" id="instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com/company/telecall/" id="linkedin">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-        </div>
-        </div>
-        <div id="footer_bottom">
-            <p>Copyright © 2018 Telecall. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+    <?php include_once 'footer.php'; ?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

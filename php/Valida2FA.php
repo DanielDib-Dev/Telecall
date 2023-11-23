@@ -17,8 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = $conn->query($query);
 
         if ($result->num_rows <= 0){
-                //header("Location: ../Login.php?success=false");
-                var_dump($result);
+                header("Location: ../Login.php?success=false");
         }else{
                 $_SESSION['usuario'] = $_SESSION['usuario2FA'];
                 $_SESSION['nome'] = $_SESSION['nome2FA'];
