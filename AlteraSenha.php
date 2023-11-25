@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>CPaaS Platform - Home</title>
+    <title>CPaaS Platform - Alterar Senha</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="imagens/icontelecall.png">
@@ -29,7 +29,6 @@
                     <span class="span-placeholder"><i class="fa-solid fa-lock"></i> Confirmar Senha</span>
                     <i class="i-box"></i>
                 </div>
-                <input type="hidden" id="Perfil" name="perfil" value="1">
                 <span id="confirmaNovaErro" class="span-erro">Os campos "senha" e "confirmar senha" devem ser iguais.</span>
                 <div class="form-botoes">
                     <input type="reset" class="botao-form" value="Resetar">
@@ -38,6 +37,13 @@
             </form>
         </div>
     </div>
+    <div id="modal-sucesso" class="modal-fundo">
+        <div class="modal-cliente">
+            <h4>Sucesso!</h4>
+            <p>Você alterou sua senha com sucesso.</p>
+            <a href="Perfil.php" class="btn btn-primary">Voltar ao seu perfil</a>
+        </div>
+    </div> 
     <?php include_once 'footer.php'; ?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>

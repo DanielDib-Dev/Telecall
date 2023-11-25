@@ -579,6 +579,18 @@ $(document).ready(function() {
           }
   });
 }
+
+//Sucesso na alteração de senha
+if (currentPath.includes("AlteraSenha.php")) {
+$(document).ready(function() {
+  const urlParams = new URLSearchParams(window.location.search);
+          const successParam = urlParams.get("success");
+          // Exibe o modal se o parâmetro "success" estiver presente
+          if (successParam === "true") {
+              document.getElementById("modal-sucesso").style.display = "block";
+          }
+  });
+}
 //acessibilidade de fontes
 
 $(document).ready(function() {
