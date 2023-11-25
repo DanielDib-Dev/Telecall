@@ -1,9 +1,19 @@
 <?php 
     include_once 'php/LogarUser.php'; 
     $caminhoAtual = $_SERVER['PHP_SELF'];
+    $paginasPermitidas = array("2FA.php", "ConsultaUsuario.php", "AlteraSenha.php", "GVC.php", "ModeloDB.php", "NumeroMascara.php", "Perfil.php", "SMS.php");
     if(isset($_SESSION['logado']) && $_SESSION['logado'] === FALSE && strpos($caminhoAtual, "2FAUser.php") == false){
          session_destroy();
          header("Location: Login.php?success=false");
+    }
+    
+    if(isset($_SESSION['perfil']) && $_SESSION['perfil'] == 2 && strpos($caminhoAtual, "AlteraSenha.php") == true){
+        header("Location: erro.php");
+    }
+    
+    if (!isset($_SESSION['perfil']) && in_array(basename($caminhoAtual), $paginasPermitidas)) {
+        header("Location: Login.php");
+        exit();
     }
 ?>
 <header>
@@ -21,33 +31,43 @@
                             </a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link nav-hover" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Serviços <i class="fa-solid fa-screwdriver-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="2FA.php">2FA</a></li>
-                                <li><a class="dropdown-item" href="NumeroMascara.php">Número Máscara</a></li>
-                                <li><a class="dropdown-item" href="GVC.php">Google Verified Calls</a></li>
-                                <li><a class="dropdown-item" href="SMS.php">SMS Programável</a></li>
+                    <?php 
+                    if(isset($_SESSION['perfil'])){
+                        echo'
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link nav-hover" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Serviços <i class="fa-solid fa-screwdriver-wrench"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="2FA.php">2FA</a></li>
+                                    <li><a class="dropdown-item" href="NumeroMascara.php">Número Máscara</a></li>
+                                    <li><a class="dropdown-item" href="GVC.php">Google Verified Calls</a></li>
+                                    <li><a class="dropdown-item" href="SMS.php">SMS Programável</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link nav-hover" href="ModeloDB.php">
+                                    Modelo do DB <i class="fa-solid fa-database"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    ';
+                    }
+                        if(isset($_SESSION['perfil']) && ($_SESSION['perfil'] == 2)){
+                            echo '
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link nav-hover" href="ConsultaUsuario.php">
+                                        Consulta de Usuário <i class="fa-solid fa-magnifying-glass"></i>
+                                    </a>
+                                </li>
                             </ul>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link nav-hover" href="ModeloDB.php">
-                                Modelo do DB <i class="fa-solid fa-database"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link nav-hover" href="ConsultaUsuario.php">
-                                Consulta de Cliente <i class="fa-solid fa-magnifying-glass"></i>
-                            </a>
-                        </li>
-                    </ul>
+                            ';
+                        }
+                    ?>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
                             <a class="nav-link nav-hover" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

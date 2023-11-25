@@ -26,7 +26,13 @@
                         <p class="perfilP">Telefone: <?php echo $_SESSION['tel']; ?></p>
                         <p class="perfilP">Celular: <?php echo $_SESSION['cel']; ?></p>
                         <p class="perfilP">Endereço: <?php echo $_SESSION['endereco']; ?></p>
-                        <a class="perfilSenha" href="AlteraSenha.php">Quer alterar sua senha? Clique aqui!</a>
+                        <?php 
+                        if(isset($_SESSION['perfil']) && ($_SESSION['perfil'] == 1 )){
+                            echo '
+                                <a class="perfilSenha" href="AlteraSenha.php">Quer alterar sua senha? Clique aqui!</a>
+                            ';
+                        }
+                    ?>
                     </div>
                 </div>
             </div>

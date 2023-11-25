@@ -46,7 +46,7 @@
                 <p class="text-start">
                     <i class="fa-solid fa-turn-up fa-rotate-90"></i> É um procedimento de segurança que requer 2 fatores únicos para liberação de ação, como senha e autenticação via token, impressão digital, reconhecimento facial ou código SMS.<br>
                 </p>
-                <a href="2FA.html" class="btn btn-primary btn-card">Saiba mais</a>
+                <a href="2FA.php" class="btn btn-primary btn-card">Saiba mais</a>
             </li>
             <li>
                 <img class="quem-usa-img red-img" src="imagens/SolucoesNumeroMascara.png" alt="ícone NumeroMascara">
@@ -54,7 +54,7 @@
                 <p class="text-start">
                     <i class="fa-solid fa-turn-up fa-rotate-90"></i> Este serviço serve para ocultar o número de telefone do usuário ao realizar ligações, substituindo-o por um número genérico. Isso protege a privacidade do usuário e evita que o número seja exposto.<br>
                 </p>
-                <a href="NumeroMascara.html" class="btn btn-primary btn-card">Saiba mais</a>
+                <a href="NumeroMascara.php" class="btn btn-primary btn-card">Saiba mais</a>
             </li>
             <li>
                 <img class="quem-usa-img red-img" src="imagens/SolucoesGoogleverifiedCalls.png" alt="ícone NumeroMascara">
@@ -62,7 +62,7 @@
                 <p class="text-start">
                     <i class="fa-solid fa-turn-up fa-rotate-90"></i> É um serviço que ajuda a identificar e proteger usuários contra chamadas de spam e golpes telefônicos, exibindo um indicador de confiança para empresas que utilizam o serviço.<br>
                 </p>
-                <a href="GVC.html" class="btn btn-primary btn-card">Saiba mais</a>
+                <a href="GVC.php" class="btn btn-primary btn-card">Saiba mais</a>
             </li>
             <li>
                 <img class="quem-usa-img red-img" src="imagens/SolucoesSMSProgramavel.png" alt="ícone NumeroMascara">
@@ -70,7 +70,7 @@
                 <p class="text-start">
                     <i class="fa-solid fa-turn-up fa-rotate-90"></i> É uma solução que permite enviar mensagens SMS em massa automatizadas para clientes, com o objetivo de facilitar o envio de informações, promoções e atualizações em tempo real.<br>
                 </p>
-                <a href="SMS.html" class="btn btn-primary btn-card">Saiba mais</a>
+                <a href="SMS.php" class="btn btn-primary btn-card">Saiba mais</a>
             </li>
         </ul>
         <h1 data-aos="fade-up">Presença em todo Rio de Janeiro</h1>
