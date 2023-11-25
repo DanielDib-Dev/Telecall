@@ -121,7 +121,7 @@ function scrollToTop() {
 
 //Área do cliente
 
-if (window.location.pathname.includes("Cadastro.php") || window.location.pathname.includes("Login.php")) {
+if (window.location.pathname.includes("Cadastro.php") || window.location.pathname.includes("Login.php") || window.location.pathname.includes("AlteraSenha.php")) {
     function manterAberto(valor) {
         const inputElement = $(valor);
         const iBoxElement = inputElement.siblings(".i-box");
@@ -332,6 +332,35 @@ if (currentPath.includes("Cadastro.php")) {
 });
 }
 
+//Alteração de senha
+if (window.location.pathname.includes("AlteraSenha.php")){
+//validação do senha    
+$('#SenhaNova').keyup(function () {
+  const senha = $(this).val().trim();
+
+  if (senha.length === 8) {
+    $('#senhaNovaErro').css('display', 'none');
+  }else{
+    $('#senhaNovaErro').css('display', 'inline');
+  }
+});
+//validação do confirma senha      
+if (currentPath.includes("AlteraSenha.php")) {
+  $(document).ready(function() {
+    $('.inputPassword').keyup(function() {
+      var senhaNova = $('#SenhaNova').val();
+      var confirmaSenhaNova = $('#ConfirmaNova').val();
+  
+      if (senhaNova === confirmaSenhaNova) {
+        $('#confirmaNovaErro').css('display', 'none');
+      } else {
+        $('#confirmaNovaErro').css('display', 'inline');
+      }
+    });
+  });
+  }
+}
+
 //Apenas letras input
 
 if (window.location.pathname.includes("Cadastro.php") || window.location.pathname.includes("Login.php")) {
@@ -500,10 +529,21 @@ $('#cadastro').on('submit', function(event) {
   else if ($('#confirmaErro').css('display') !== 'none') {
     alert('Corrija a confirmação de senha');
     event.preventDefault(); // Impede o envio do formulário
-  } 
-  else{
+  }else{
     document.getElementById('cadastro').submit();
   }
+});
+
+//Impedir o envio da alteração de senha
+$('#alteraSenha').on('submit', function(event) {
+  // Verifique se qualquer um dos erros está visível
+  if ($('#senhaNovaErro').css('display') !== 'none') {
+    alert('Corrija a senha');
+    event.preventDefault(); // Impede o envio do formulário
+  }else if ($('#confirmaNovaErro').css('display') !== 'none') {
+    alert('Corrija a confirmação de senha');
+    event.preventDefault(); // Impede o envio do formulário
+  } 
 });
 
 //Cadastro realizado com sucesso

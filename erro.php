@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>CPaaS Platform - 2FA</title>
+    <title>Página não encontrada</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="imagens/icontelecall.png">
@@ -12,25 +12,10 @@
 </head>
 <body>
     <?php include_once 'header.php'; ?>
-    <div class="content">
-        <div id="content" class="white_2FA">
-            <div class="perfilDiv">
-                <div class="perfilCard">
-                    <img class="perfilImg" src="imagens/perfil.png">
-                    <div class="perfilDivP">
-                        <p class="perfilP">Usuário: <?php echo $_SESSION['usuario']; ?></p>
-                        <p class="perfilP">Nome: <?php echo $_SESSION['nome']; ?></p>
-                        <p class="perfilP">Data de nascimento: <?php echo $_SESSION['dataNasc']; ?></p>
-                        <p class="perfilP">Gênero: <?php echo $_SESSION['genero']; ?></p>
-                        <p class="perfilP">Nome da mãe: <?php echo $_SESSION['nomeM']; ?></p>
-                        <p class="perfilP">Telefone: <?php echo $_SESSION['tel']; ?></p>
-                        <p class="perfilP">Celular: <?php echo $_SESSION['cel']; ?></p>
-                        <p class="perfilP">Endereço: <?php echo $_SESSION['endereco']; ?></p>
-                        <a class="perfilSenha" href="AlteraSenha.php">Quer alterar sua senha? Clique aqui!</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="error">
+        <h2>Página não encontrada.</h2>
+        <p>Não conseguimos encontrar a página que você procura.</p>
+        <a href="index.php">Ir para a página inicial</a>
     </div>
     <?php include_once 'footer.php'; ?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

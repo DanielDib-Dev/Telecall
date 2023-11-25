@@ -1475,6 +1475,47 @@ div, img{
 }
 
 
+/** Css da página de Error **/
+
+.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.error h2{
+    font-size: 60px;
+    margin: 5px 10px;
+    font-weight: 500;
+}
+
+.error a{
+    text-decoration: none;
+    background-color: var(--cor-h1);
+    color: var(--cor-fundo2);
+    padding: 15px 15px;
+    margin-top: 10px;
+    display: inline-block;
+    border-radius: 25px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.error a:hover {
+    background-color: #0969c4;
+}
+
+/**Fim do css da pg de Erro**/
+
+
+
+
+
 @media (max-width: 1199px){
     .navbar-collapse{
         background-color: var(--cor-nav);
@@ -1831,4 +1872,16 @@ div, img{
         padding-right: 0.4rem;
         padding-left: 0.4rem;
     }
+}
+
+.perfilSenha{
+    margin: 10px 0;
+    font-size: 16px;
+    color: #003b71;
+    text-decoration: none;
+    transition: 0.2s;    
+}
+
+.perfilSenha:hover{
+    color: var(--cor-letra);
 }
