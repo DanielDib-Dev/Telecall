@@ -61,7 +61,7 @@ $(document).ready(function() {
     $(".invert-img").css("filter", "invert(100%)");
     $(".soft-invert-img").css("filter", "invert(85%)");
     $(".red-img").css("filter", "hue-rotate(155deg) saturate(300%)");
-    $(".content-cliente").css("background", "var(--cor-fundo2) url(../Projeto/imagens/bg2.png)");
+    $(".content-cliente").css("background", "var(--cor-fundo2) url(../Telecall/imagens/bg2.png)");
   }
 
   function disableDarkMode() {
@@ -78,7 +78,7 @@ $(document).ready(function() {
     $(".invert-img").css("filter", "invert(0%)");
     $(".soft-invert-img").css("filter", "invert(0%)");
     $(".red-img").css("filter", "none");
-    $(".content-cliente").css("background", "var(--cor-fundo2) url(../Projeto/imagens/bg.png)");
+    $(".content-cliente").css("background", "var(--cor-fundo2) url(../Telecall/imagens/bg.png)");
   }
 });
 
@@ -121,7 +121,7 @@ function scrollToTop() {
 
 //Área do cliente
 
-if (window.location.pathname.includes("Cadastro.php") || window.location.pathname.includes("Login.php") || window.location.pathname.includes("AlteraSenha.php")) {
+if (window.location.pathname.includes("Cadastro.php") || window.location.pathname.includes("Login.php") || window.location.pathname.includes("AlteraSenha.php") || window.location.pathname.includes("2FAUser.php")) {
     function manterAberto(valor) {
         const inputElement = $(valor);
         const iBoxElement = inputElement.siblings(".i-box");
@@ -303,6 +303,16 @@ if (currentPath.includes("Cadastro.php")) {
       $('#enderecoErro').css('display', 'inline');
     }
   });
+  //validação do CEP  
+  $('#Cep').keyup(function () {
+    const cep = $(this).val().trim();
+
+    if (cep.length >= 9) {
+      $('#cepErro').css('display', 'none');
+    }else{
+      $('#cepErro').css('display', 'inline');
+    }
+  });
   //validação do senha    
   $('#Senha').keyup(function () {
     const senha = $(this).val().trim();
@@ -467,7 +477,21 @@ if (window.location.pathname.includes("Cadastro.php")){
               celularInput.value = formatado;
           } 
         });
-      }   
+        
+
+  //Máscara CEP
+        
+  const cepInput = document.getElementById('Cep');
+        
+  cepInput.addEventListener('input', function () {
+    const cep = cepInput.value.replace(/\D/g, ''); // remove caracteres não numéricos
+  
+    if (cep.length === 5) {
+      const formatado = cep.substring(0, 5) + '-' + cep.substring(5, 8);
+      cepInput.value = formatado;
+    }
+  });
+}
 
 //Ver senha
 
@@ -702,4 +726,78 @@ function createPDF() {
   win.document.close(); 
 
   win.print();    
+}
+
+
+if (currentPath.includes("2FAUser.php")) {
+  $(document).ready(function(){
+    //validação do 2FA
+    //Cep
+    $('#Cep').keyup(function () {
+      const cep = $(this).val().trim();
+
+      if (cep.length >= 9) {
+        $('#cepErro').css('display', 'none');
+      }else{
+        $('#cepErro').css('display', 'inline');
+      }
+    });
+    //nome da mãe
+    $('#NomeM').keyup(function () {
+      const mae = $(this).val().trim();
+
+      if (mae.length < 15) {
+        $('#maeErro').css('display', 'inline');
+      }else{
+        $('#maeErro').css('display', 'none');
+      }
+    });
+    //data de nascimento
+    $('#DataNasc').keyup(function() {
+      var nascimento = $(this).val();
+
+      // Verifica se a entrada tem 10 caracteres
+      if (nascimento.length === 10) {
+        var inputAno = nascimento.slice(-4);
+        var anoAtual = new Date().getFullYear();
+        var diferencaAnos = anoAtual - parseInt(inputAno);
+
+        if (diferencaAnos >= 18 && diferencaAnos <= 100) {
+          $('#nascimentoErro').css('display', 'none');
+        } else {
+          $('#nascimentoErro').css('display', 'inline');
+        }
+      }else{
+        $('#nascimentoErro').css('display', 'inline');
+      }
+    });
+
+    //máscaras 2FA
+    //data de nascimento
+    function formatarNascimento(nascimento) {
+      nascimento = nascimento.replace(/\D/g, ''); // Remove caracteres não numéricos
+      nascimento = nascimento.replace(/(\d{2})(\d)/, '$1/$2'); // Adiciona barra após os primeiros 2 dígitos
+      nascimento = nascimento.replace(/(\d{2})(\d)/, '$1/$2'); // Adiciona barra após os segundos 2 dígitos
+      return nascimento;
+    }
+
+    function atualizarFormatoNascimento() {
+      var nascimentoInput = document.getElementById('DataNasc');
+      nascimentoInput.value = formatarNascimento(nascimentoInput.value);
+    }
+
+    var nascimentoInput = document.getElementById('DataNasc');
+    nascimentoInput.addEventListener('input', atualizarFormatoNascimento);
+    //cep
+    const cepInput = document.getElementById('Cep');
+        
+  cepInput.addEventListener('input', function () {
+    const cep = cepInput.value.replace(/\D/g, ''); // remove caracteres não numéricos
+  
+    if (cep.length === 5) {
+      const formatado = cep.substring(0, 5) + '-' + cep.substring(5, 8);
+      cepInput.value = formatado;
+    }
+  });
+  });
 }

@@ -11,10 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tel = $_POST['tel'];
     $cel = $_POST['cel'];
     $endereco = $_POST['endereco'];
+    $cep = $_POST['cep'];
     $senha = hash("SHA256", $_POST['senha']);
     $perfil = $_POST['perfil'];
 
-    $sql = "INSERT INTO usuario (usuario, nome, cpf, dataNasc, genero, nomeM, tel, cel, endereco, senha, perfil) VALUES ('$usuario', '$nome', '$cpf', '$dataNasc', '$genero', '$nomeM', '$tel', '$cel', '$endereco', '$senha', $perfil)";
+    $sql = "INSERT INTO usuario (usuario, nome, cpf, dataNasc, genero, nomeM, tel, cel, endereco, senha, cep, perfil) VALUES ('$usuario', '$nome', '$cpf', '$dataNasc', '$genero', '$nomeM', '$tel', '$cel', '$endereco', '$senha', '$cep', $perfil)";
 
     if ($conn->query($sql) === TRUE) {
         header("Location: ../cadastro.php?success=true");

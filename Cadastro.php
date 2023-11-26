@@ -76,6 +76,12 @@
                 </div>
                 <span id="enderecoErro" class="span-erro">O campo "endereço completo" deve ser preenchido</span>
                 <div class="inputBox">
+                    <input type="text" id="Cep" class="inputText" required="required" name="cep" title="" onchange="manterAberto(this);" maxlength="9" pattern= "\d{5}-\d{3}" data-error="cepErro">
+                    <span class="span-placeholder"><i class="fa-solid fa-house"></i> CEP</span>
+                    <i class="i-box"></i>
+                </div>
+                <span id="cepErro" class="span-erro">O campo "CEP" deve ser preenchido seguindo o exemplo: 12345-789</span>
+                <div class="inputBox">
                     <input type="password" id="Senha" class="inputText inputPassword inputLetra" required="required" name="senha" title="" oninput="manterAberto(this);" maxlength="8" data-error="senhaErro">
                     <i class="fa-solid fa-eye"></i>
                     <span class="span-placeholder"><i class="fa-solid fa-lock"></i> Senha</span>

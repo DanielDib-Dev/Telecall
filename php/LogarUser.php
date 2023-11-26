@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['tel2FA'] = $row['tel'];
             $_SESSION['cel2FA'] = $row['cel'];
             $_SESSION['endereco2FA'] = $row['endereco'];
+            $_SESSION['cep2FA'] = $row['cep'];
             $_SESSION['perfil2FA'] = $row['perfil'];
             $_SESSION['logado'] = FALSE;
             header("Location: ../2FAUser.php");
@@ -42,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['tel'] = $row['tel'];
         $_SESSION['cel'] = $row['cel'];
         $_SESSION['endereco'] = $row['endereco'];
+        $_SESSION['cep'] = $row['cep'];
         $_SESSION['perfil'] = $row['perfil'];
         $_SESSION['logado'] = TRUE;
         header("Location: ../Login.php?success=true");

@@ -1907,7 +1907,8 @@ div, img{
 }
 
 .perfilSenha:hover{
-    color: var(--cor-letra);
+    color: black;
+    text-decoration: underline;
 }
 
 .botao{

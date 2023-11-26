@@ -7,9 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['nomeM'])) {
                 $nomeM = $_POST['nomeM'];
                 $query = "SELECT * FROM usuario WHERE nomeM = '$nomeM' AND usuario = '$usuario'";
-        }elseif (isset($_POST['endereco'])) {
-                $endereco = $_POST['endereco'];
-                $query = "SELECT * FROM usuario WHERE endereco = '$endereco' AND usuario = '$usuario'";
+        }elseif (isset($_POST['cep'])) {
+                $cep = $_POST['cep'];
+                $query = "SELECT * FROM usuario WHERE cep = '$cep' AND usuario = '$usuario'";
         }elseif (isset($_POST['dataNasc'])) {
                 $dataNasc = $_POST['dataNasc'];
                 $query = "SELECT * FROM usuario WHERE dataNasc = '$dataNasc' AND usuario = '$usuario'";
@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['tel'] = $_SESSION['tel2FA'];
                 $_SESSION['cel'] = $_SESSION['cel2FA'];
                 $_SESSION['endereco'] = $_SESSION['endereco2FA'];
+                $_SESSION['cep'] = $_SESSION['cep2FA'];
                 $_SESSION['perfil'] = $_SESSION['perfil2FA'];
                 $_SESSION['logado'] = TRUE;
                 $chavesParaRemover = array(
@@ -38,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         'tel2FA',
                         'cel2FA',
                         'endereco2FA',
+                        'cep2FA',
                         'perfil2FA'
                     );
                     

@@ -26,6 +26,7 @@
                         <p class="perfilP">Telefone: <?php echo $_SESSION['tel']; ?></p>
                         <p class="perfilP">Celular: <?php echo $_SESSION['cel']; ?></p>
                         <p class="perfilP">Endereço: <?php echo $_SESSION['endereco']; ?></p>
+                        <p class="perfilP">CEP: <?php echo $_SESSION['cep']; ?></p>
                         <?php 
                         if(isset($_SESSION['perfil']) && ($_SESSION['perfil'] == 1 )){
                             echo '

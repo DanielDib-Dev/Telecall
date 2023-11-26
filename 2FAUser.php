@@ -14,29 +14,45 @@
     <?php include_once 'header.php'; ?>
     <div class="content-cliente">
         <div class="box"  data-aos="zoom-in">
-            <form id="login" action="php/Valida2FA.php" method="post">
+            <form id="2FAUser" action="php/Valida2FA.php" method="post">
                 <h2>Segundo fator de autenticação</h2>
                 <div class="inputBox">
                     <?php 
-                    $perguntas = array("nomeM", "endereco", "dataNasc");
+                    $perguntas = array("nomeM", "cep", "dataNasc");
                     $perguntaEscolhida = $perguntas[array_rand($perguntas)];
                     switch ($perguntaEscolhida) {
                         case "nomeM":
                             $pergunta = "Qual o nome da sua mãe?";
+                            echo'<input type="text" id="NomeM" class="inputText inputLetra" required="required" name="nomeM" title="" onchange="manterAberto(this);" maxlength="80" data-error="maeErro">
+                            <input id="DataNasc" style="display: none;">
+                            <input id="Cep" style="display: none;">
+                            <span class="span-placeholder"><i class="fa-solid fa-signature"></i> Nome da mãe</span>
+                            <i class="i-box"></i>
+                            </div>';
+                            echo'<span id="maeErro" class="span-erro">O campo "nome da mãe" deve possuir entre 15 e 80 caracteres alfabéticos</span>';
                             break;
-                        case "endereco":
-                            $pergunta = "Qual o seu endereço?";
+                        case "cep":
+                            $pergunta = "Qual o seu CEP?";
+                            echo'<input type="text" id="Cep" class="inputText" required="required" name="cep" title="" maxlength="9" pattern="\d{5}-\d{3}" data-error="cepErro">
+                            <input id="DataNasc" style="display: none;">
+                            <input id="NomeM" style="display: none;">
+                            <span class="span-placeholder"><i class="fa-solid fa-house"></i> CEP</span>
+                            <i class="i-box"></i>
+                            </div>';
+                            echo'<span id="cepErro" class="span-erro">O campo "CEP" deve ser preenchido seguindo o exemplo: 12345-789</span>';
                             break;
                         case "dataNasc":
                             $pergunta = "Qual sua data de nascimento?";
+                            echo'<input type="text" id="DataNasc" class="inputText" required="required" name="dataNasc" title="" onchange="manterAberto(this);" maxlength="10" data-error="nascimentoErro">
+                            <input id="NomeM" style="display: none;">
+                            <input id="Cep" style="display: none;">
+                            <span class="span-placeholder"><i class="fa-regular fa-calendar"></i> Data de nascimento</span>
+                            <i class="i-box"></i>
+                            </div>';
+                            echo'<span id="nascimentoErro" class="span-erro">O campo "data de nascimento" deve ser preenchido corretamente</span>';
                             break;
                     }
-                    echo'<input type="text" class="inputText" required name="'.$perguntaEscolhida.'" id="'.$perguntaEscolhida.'">
-                    <span class="span-placeholder"><i class="fa-solid fa-lock"></i> '.$pergunta.'</span>
-                    <i class="i-box"></i>';
                 ?>
-                </div>
-                <span id="senhaErro" class="span-erro">O campo "senha" deve ser preenchido</span>
                 <div class="form-botoes">
                     <input type="reset" class="botao-form" value="Resetar">
                     <input type="submit" class="botao-form" value="Enviar">
