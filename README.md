@@ -10,14 +10,14 @@ Projeto acadêmico em parceria com a empresa Telecall. Oficialmente meu primeiro
 
 * Após o login, o usuário passa a ter acesso a algumas páginas que não tinha anteriormente.
 O master e o comum tem acesso a:
--ModeloDB.php - como descrito nos requisitos do projeto, os dois perfis têm acesso a essa página, é uma página que serve apenas para expor o modelo do banco de dados;
+ModeloDB.php - como descrito nos requisitos do projeto, os dois perfis têm acesso a essa página, é uma página que serve apenas para expor o modelo do banco de dados;
 Páginas de serviços 2FA.php, GVC.php, NumeroMascara.php e SMS.php - São páginas de informações sobre os serviços da empresa;
 Perfil.php - é uma página que exibe algumas informações sobre o perfil logado.
 
-- Apenas o master tem acesso:
+Apenas o master tem acesso:
 ConsultaUsuario.php - é uma página que serve para a pesquisa de usuários de perfil comum registrados no banco de dados, tendo a opção de exportar como pdf ou excluir determinado usuário do banco de dados pelo arquivo php/ExcluirUsuario.php, a página conta com um campo de pesquisa, onde é possível pesquisar por substring do nome do usuário.
 
-- Apenas o comum tem acesso:
+Apenas o comum tem acesso:
 AlteraSenha.php - caso o usuário seja comum, na página Perfil.php haverá uma opção para alterar a senha. Caso preenchido corretamente, a nova senha é salva por meio do php/ProcessaAlteraSenha.php
 
 * Após logar, é disponibilizado o botão de deslogar na navbar, que utiliza o arquivo php/Deslogar.php para excluir os dados da sessão.
