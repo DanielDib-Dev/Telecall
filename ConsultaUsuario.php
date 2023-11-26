@@ -49,7 +49,7 @@
                                 echo "
                                 <tr>
                                     <td width='50px'>{$row['idUsuario']}</td>
-                                    <td>{$row['nome']}</td>
+                                    <td id='nomes'>{$row['nome']}</td>
                                     <td class='delete-icon'>
                                         <a href='#' class='delete-botao' data-id='{$row['idUsuario']}'><i class='fa-solid fa-trash'></i></a>
                                     </td>

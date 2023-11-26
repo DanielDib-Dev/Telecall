@@ -23,7 +23,7 @@
                     switch ($perguntaEscolhida) {
                         case "nomeM":
                             $pergunta = "Qual o nome da sua mãe?";
-                            echo'<input type="text" id="NomeM" class="inputText inputLetra" required="required" name="nomeM" title="" onchange="manterAberto(this);" maxlength="80" data-error="maeErro">
+                            echo'<input type="text" id="NomeM" class="inputText inputLetra input2FA" required="required" name="nomeM" title="" maxlength="80" data-error="maeErro">
                             <input id="DataNasc" style="display: none;">
                             <input id="Cep" style="display: none;">
                             <span class="span-placeholder"><i class="fa-solid fa-signature"></i> Nome da mãe</span>
@@ -33,7 +33,7 @@
                             break;
                         case "cep":
                             $pergunta = "Qual o seu CEP?";
-                            echo'<input type="text" id="Cep" class="inputText" required="required" name="cep" title="" maxlength="9" pattern="\d{5}-\d{3}" data-error="cepErro">
+                            echo'<input type="text" id="Cep" class="inputText input2FA" required="required" name="cep" title="" maxlength="9" data-error="cepErro">
                             <input id="DataNasc" style="display: none;">
                             <input id="NomeM" style="display: none;">
                             <span class="span-placeholder"><i class="fa-solid fa-house"></i> CEP</span>
@@ -43,7 +43,7 @@
                             break;
                         case "dataNasc":
                             $pergunta = "Qual sua data de nascimento?";
-                            echo'<input type="text" id="DataNasc" class="inputText" required="required" name="dataNasc" title="" onchange="manterAberto(this);" maxlength="10" data-error="nascimentoErro">
+                            echo'<input type="text" id="DataNasc" class="inputText input2FA" required="required" name="dataNasc" title="" maxlength="10" data-error="nascimentoErro">
                             <input id="NomeM" style="display: none;">
                             <input id="Cep" style="display: none;">
                             <span class="span-placeholder"><i class="fa-regular fa-calendar"></i> Data de nascimento</span>

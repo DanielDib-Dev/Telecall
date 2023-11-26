@@ -32,7 +32,7 @@
                 <span id="confirmaNovaErro" class="span-erro">Os campos "senha" e "confirmar senha" devem ser iguais.</span>
                 <div class="form-botoes">
                     <input type="reset" class="botao-form" value="Resetar">
-                    <input type="submit" class="botao-form" value="Entrar">
+                    <input type="submit" class="botao-form" value="Salvar">
                 </div>
             </form>
         </div>
@@ -43,7 +43,14 @@
             <p>Você alterou sua senha com sucesso.</p>
             <a href="Perfil.php" class="btn btn-primary">Voltar ao seu perfil</a>
         </div>
-    </div> 
+    </div>
+    <div id="modalErro" class="modal-fundo">
+        <div class="modal-cliente">
+            <h4>Correção necessária</h4>
+            <p>As senhas devem ser iguais e possuirem 8 letras.</p>
+            <a id="modal-erro" class="btn btn-primary">Fechar</a>
+        </div>
+    </div>  
     <?php include_once 'footer.php'; ?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>

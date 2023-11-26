@@ -76,7 +76,7 @@
                 </div>
                 <span id="enderecoErro" class="span-erro">O campo "endereço completo" deve ser preenchido</span>
                 <div class="inputBox">
-                    <input type="text" id="Cep" class="inputText" required="required" name="cep" title="" onchange="manterAberto(this);" maxlength="9" pattern= "\d{5}-\d{3}" data-error="cepErro">
+                    <input type="text" id="Cep" class="inputText" required="required" name="cep" title="" onchange="manterAberto(this);" maxlength="9" data-error="cepErro">
                     <span class="span-placeholder"><i class="fa-solid fa-house"></i> CEP</span>
                     <i class="i-box"></i>
                 </div>
@@ -112,7 +112,14 @@
             <p>O cadastro foi concluído com sucesso. Agora você pode fazer login.</p>
             <a href="Login.php" id="modal-logar" class="btn btn-primary">Faça login</a>
         </div>
-    </div>      
+    </div>   
+    <div id="modalErro" class="modal-fundo">
+        <div class="modal-cliente">
+            <h4>Correção necessária</h4>
+            <p>Preencha os campos corretamente.</p>
+            <a id="modal-erro" class="btn btn-primary">Fechar</a>
+        </div>
+    </div>    
     <?php include_once 'footer.php'; ?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>

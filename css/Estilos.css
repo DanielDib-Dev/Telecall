@@ -1932,3 +1932,8 @@ div, img{
     justify-self: center;
     margin: 10px 0;
 }
+
+#tabelaUsuarios td:nth-child(2) {
+    max-width: 150px; /* Ajuste a largura máxima conforme necessário */
+    word-wrap: break-word;
+}

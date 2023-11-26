@@ -511,47 +511,51 @@ $(document).ready(function() {
 $('#cadastro').on('submit', function(event) {
   // Verifique se qualquer um dos erros está visível
   if ($('#userErro').css('display') !== 'none') {
-    alert('Corrija o usuário.');
+      $('#modalErro').css('display', 'block');  
     event.preventDefault(); // Impede o envio do formulário
   }
   else if ($('#nomeErro').css('display') !== 'none') {
-    alert('Corrija o nome');
+    $('#modalErro').css('display', 'block');  
     event.preventDefault(); // Impede o envio do formulário
   }
   else if ($('#cpfErro').css('display') !== 'none') {
-    alert('Corrija o cpf');
+    $('#modalErro').css('display', 'block');  
     event.preventDefault(); // Impede o envio do formulário
   }
   else if ($('#nascimentoErro').css('display') !== 'none') {
-    alert('Corrija o nascimento');
+    $('#modalErro').css('display', 'block');  
     event.preventDefault(); // Impede o envio do formulário
   }
   else if ($('#generoErro').css('display') !== 'none') {
-    alert('Corrija o genero');
+    $('#modalErro').css('display', 'block');  
     event.preventDefault(); // Impede o envio do formulário
   }
   else if ($('#maeErro').css('display') !== 'none') {
-    alert('Corrija o nome da mãe');
+    $('#modalErro').css('display', 'block');  
     event.preventDefault(); // Impede o envio do formulário
   }
   else if ($('#fixoErro').css('display') !== 'none') {
-    alert('Corrija o telefone fixo');
+    $('#modalErro').css('display', 'block');  
     event.preventDefault(); // Impede o envio do formulário
   }
   else if ($('#celularErro').css('display') !== 'none') {
-    alert('Corrija o celular');
+    $('#modalErro').css('display', 'block');  
     event.preventDefault(); // Impede o envio do formulário
   }
   else if ($('#enderecoErro').css('display') !== 'none') {
-    alert('Corrija o endereço');
+    $('#modalErro').css('display', 'block');  
+    event.preventDefault(); // Impede o envio do formulário
+  }
+  else if ($('#cepErro').css('display') !== 'none') {
+    $('#modalErro').css('display', 'block');  
     event.preventDefault(); // Impede o envio do formulário
   }
   else if ($('#senhaErro').css('display') !== 'none') {
-    alert('Corrija a senha');
+    $('#modalErro').css('display', 'block');  
     event.preventDefault(); // Impede o envio do formulário
   }
   else if ($('#confirmaErro').css('display') !== 'none') {
-    alert('Corrija a confirmação de senha');
+    $('#modalErro').css('display', 'block');  
     event.preventDefault(); // Impede o envio do formulário
   }else{
     document.getElementById('cadastro').submit();
@@ -562,10 +566,10 @@ $('#cadastro').on('submit', function(event) {
 $('#alteraSenha').on('submit', function(event) {
   // Verifique se qualquer um dos erros está visível
   if ($('#senhaNovaErro').css('display') !== 'none') {
-    alert('Corrija a senha');
+    $('#modalErro').css('display', 'block');  
     event.preventDefault(); // Impede o envio do formulário
   }else if ($('#confirmaNovaErro').css('display') !== 'none') {
-    alert('Corrija a confirmação de senha');
+    $('#modalErro').css('display', 'block');  
     event.preventDefault(); // Impede o envio do formulário
   } 
 });
@@ -801,3 +805,10 @@ if (currentPath.includes("2FAUser.php")) {
   });
   });
 }
+
+//Fecha o Modal de erro no cadastro
+$(document).ready(function(){
+  $('#modal-erro').click(function() {
+    $('#modalErro').css('display', 'none');
+  });
+});
