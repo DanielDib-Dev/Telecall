@@ -9,16 +9,16 @@ Projeto acadêmico em parceria com a empresa Telecall. Oficialmente meu primeiro
 * O login é feito na página Login.php e processado em php/LogarUser.php, esse arquivo faz a comparação entre os dados inseridos no site e os dados salvos no banco de dados, caso os dados estejam corretos, e o usuário seja perfil master, ele é logado. Caso o usuário seja perfil comum, ele é redirecionado para o 2FAUser.php que quando preenchido, envia os dados para php/Valida2FA.php, que compara a resposta inserida na página de 2FA com os dados salvos no banco de dados, caso esteja correto, o usuário é logado com sucesso.
 
 * Após o login, o usuário passa a ter acesso a algumas páginas que não tinha anteriormente.
-O master e o comum tem acesso a:
-** ModeloDB.php - como descrito nos requisitos do projeto, os dois perfis têm acesso a essa página, é uma página que serve apenas para expor o modelo do banco de dados;
-Páginas de serviços 2FA.php, GVC.php, NumeroMascara.php e SMS.php - São páginas de informações sobre os serviços da empresa;
-Perfil.php - é uma página que exibe algumas informações sobre o perfil logado.
+    - O master e o comum tem acesso a:
+        - ModeloDB.php - como descrito nos requisitos do projeto, os dois perfis têm acesso a essa página, é uma página que serve apenas para expor o modelo do banco de dados;
+        - Páginas de serviços 2FA.php, GVC.php, NumeroMascara.php e SMS.php - São páginas de informações sobre os serviços da empresa;
+        - Perfil.php - é uma página que exibe algumas informações sobre o perfil logado.
 
-** Apenas o master tem acesso:
-ConsultaUsuario.php - é uma página que serve para a pesquisa de usuários de perfil comum registrados no banco de dados, tendo a opção de exportar como pdf ou excluir determinado usuário do banco de dados pelo arquivo php/ExcluirUsuario.php, a página conta com um campo de pesquisa, onde é possível pesquisar por substring do nome do usuário.
+    - Apenas o master tem acesso:
+        - ConsultaUsuario.php - é uma página que serve para a pesquisa de usuários de perfil comum registrados no banco de dados, tendo a opção de exportar como pdf ou excluir determinado usuário do banco de dados pelo arquivo php/ExcluirUsuario.php, a página conta com um campo de pesquisa, onde é possível pesquisar por substring do nome do usuário.
 
-** Apenas o comum tem acesso:
-AlteraSenha.php - caso o usuário seja comum, na página Perfil.php haverá uma opção para alterar a senha. Caso preenchido corretamente, a nova senha é salva por meio do php/ProcessaAlteraSenha.php
+    - Apenas o comum tem acesso:
+        - AlteraSenha.php - caso o usuário seja comum, na página Perfil.php haverá uma opção para alterar a senha. Caso preenchido corretamente, a nova senha é salva por meio do php/ProcessaAlteraSenha.php.
 
 * Após logar, é disponibilizado o botão de deslogar na navbar, que utiliza o arquivo php/Deslogar.php para excluir os dados da sessão.
 
