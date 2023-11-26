@@ -2,7 +2,7 @@
  
 ## Projeto acadêmico em parceria com a empresa Telecall. Oficialmente meu primeiro site, foi aqui onde comecei a explorar as tags e estilizações, além de funções criadas com o javascript, as que mais se destacam são o dark-mode e a acessibilidade de fontes. Fora isso há também as páginas de formulários, com validações e máscaras de inputs funcionando bem. Agora em meu segundo período da faculdade, estou dando continuidade ao projeto, implementando o back-end em PHP e MySQL.
 
-* A conexão com o bancoi de dados é feito pelo arquivo php/Conexao.php, que facilita para evitar a repetição de código, tendo apenas que dar um include nas outras páginas.
+* A conexão com o banco de dados é feito pelo arquivo php/Conexao.php, que facilita para evitar a repetição de código, tendo apenas que dar um include nas outras páginas.
 
 * No back-end fora implementadas diversas funções, agora o cadastro é feito no arquivo Cadastro.php e processado no php/SalvarUser.php, Isso salva as informações do usuário no banco de dados.
 
@@ -25,3 +25,8 @@
 * O site também conta com a página erro.php, que é usada quando um usuário que não tem acesso a determinada página tenta acessá-la, como por exemplo, um perfil comum tentando acessar a página de ConsultaUsuário.php.
 
 * Os arquivos header.php e footer.php, servem apenas para unificar o header e o footer em apenas u marquivo, dessa forma caso seja necessário a alteração no header, por exemplo, não precisará modificá-lo em cada página do site.
+
+Fora isso: 
+* Todas as imagens utilizadas no site são armazenadas na pasta "imagens";
+* Todo o javascript do site está na pasta "java";
+* O script para a criação do banco de dados está na pasta "banco de dados";
