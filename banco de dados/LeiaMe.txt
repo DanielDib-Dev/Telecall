@@ -1,0 +1,4 @@
+Não sei se era pra ser exatamente dessa forma, mas quando nós tentávamos simplesmente exportar o banco de dados como script, ele não fazia a criação do schema em si, e sim só da tabela "usuario".
+Tendo isso em vista, fizemos a criação do schema no inicio do script, e após isso, a criação da tabela e seus dados.
+
+O vídeo de como fiz está nessa pasta, se chama "Adicionando DB".
