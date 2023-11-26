@@ -14,24 +14,50 @@
     <?php include_once 'header.php'; ?>
     <div id="content">
         <div class="consulta-table">
-            <h1>Lista de Usuários</h1>
-            <div class="pesquisa-table">
+            <h1>Consulta de Usuários</h1>
+            <form action="" method="get" class="pesquisa-table">
                 <label for="pesquisa">Pesquisar por nome:</label>
-                <input class="pesquisa-input" type="text" id="pesquisa" placeholder="Digite o nome">
-            </div>
+                <input name="pesquisa" class="pesquisa-input" type="text" id="pesquisa" placeholder="Digite o nome">
+                <button type="submit" class="botao">Pesquisar</button>
+            </form>
             <table>
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Nome do Usuário</th>
                         <th class="delete-coluna">Excluir</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Márcio de eticeteras e tal</td>
-                        <td class="delete-icon"><i class="fa-solid fa-trash"></i></td>
-                    </tr>
-                </tbody>
+                <?php 
+                    if (isset($_GET['pesquisa'])) {
+                        $pesquisa = $_GET["pesquisa"];
+                        $query = "SELECT * FROM usuario WHERE nome LIKE '%$pesquisa%' AND perfil = 1";
+                        $result = mysqli_query($conn, $query);
+                    } else {
+                        // Se a página foi acessada pela primeira vez ou sem pesquisa, mostrar todos os usuários
+                        $query = "SELECT * FROM usuario WHERE perfil = 1";
+                        $result = mysqli_query($conn, $query);
+                    }
+
+                    // Exibir resultados em uma tabela
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "
+                            <tr>
+                                <td width='50px'>{$row['idUsuario']}</td>
+                                <td>{$row['nome']}</td>
+                                <td class='delete-icon'><i class='fa-solid fa-trash'></i></td>
+                            </tr>";
+                        }
+                        echo "</table>";
+                    } else {
+                        echo "
+                                <tr>
+                                    <td colspan='3'>Nenhum usuário foi encontrado.</td>
+                                </tr>
+                            </table>";
+                    }
+                ?>
             </table>
         </div>
     </div>

@@ -15,6 +15,10 @@
         header("Location: Login.php");
         exit();
     }
+
+    if(isset($_SESSION['perfil']) && $_SESSION['perfil'] == 1 && strpos($caminhoAtual, "ConsultaUsuario.php")){
+        header("Location: erro.php");
+    }
 ?>
 <header>
         <nav class="navbar navbar-expand-xl vermelho-telecall" data-bs-theme="dark">

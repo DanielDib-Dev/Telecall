@@ -1885,3 +1885,15 @@ div, img{
 .perfilSenha:hover{
     color: var(--cor-letra);
 }
+
+.botao{
+    background-color: var(--cor-nav);
+    border-radius: 15px;
+    border: none;
+    color: var(--cor-letra);
+    padding: 5px;
+}
+
+.botao:hover{
+    background-color: var(--cor-navhover);
+}
