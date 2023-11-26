@@ -15,7 +15,7 @@
     <div class="error">
         <h2>Página não encontrada.</h2>
         <p>Não conseguimos encontrar a página que você procura.</p>
-        <a href="index.php">Ir para a página inicial</a>
+        <a href="index.php">Página inicial</a>
     </div>
     <?php include_once 'footer.php'; ?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

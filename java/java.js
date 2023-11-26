@@ -638,3 +638,68 @@ $(document).ready(function() {
 document.addEventListener('DOMContentLoaded', function () {
   AOS.init();
 });
+
+//Confirmar exclusão do usuário
+
+  // Função para obter parâmetros da string de consulta da URL
+  function getQueryStringParameter(name) {
+    var urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+if (currentPath.includes("ConsultaUsuario.php")) {
+  $(document).ready(function(){
+      $(".delete-botao").on("click", function(e){
+          e.preventDefault();
+          var idUsuario = $(this).data("id");
+          var pesquisa = getQueryStringParameter("pesquisa");
+          if (confirm("Tem certeza que deseja excluir este usuário?")) {
+              window.location.href = "php/ExcluirUsuario.php?id=" + idUsuario + "&pesquisa=" + pesquisa;
+          }
+      });
+  });
+}
+
+//Exportar usuários como pdf
+function createPDF() {
+  // Clona a tabela para evitar alterações na tabela original
+  var tabelaClone = document.getElementById('tabelaUsuarios').cloneNode(true);
+
+  // Remove a coluna "Excluir" do clone
+  var colunaExcluir = tabelaClone.getElementsByClassName('delete-coluna')[0];
+  if (colunaExcluir) {
+      colunaExcluir.style.display = 'none'; // Oculta a coluna no clone
+
+      // Remove a célula correspondente em cada linha
+      var linhas = tabelaClone.getElementsByTagName('tr');
+      for (var i = 0; i < linhas.length; i++) {
+          var celulaExcluir = linhas[i].getElementsByClassName('delete-icon')[0];
+          if (celulaExcluir) {
+              linhas[i].removeChild(celulaExcluir);
+          }
+      }
+  }
+
+  var sTable = tabelaClone.innerHTML;
+
+  var style = "<style>";
+  style = style + "table {width: 100%;font: 17px Calibri;}";
+  style = style + "table, th, td {border: solid 1px #DDD; border-collapse: collapse;";
+  style = style + "padding: 2px 3px;text-align: center;}";
+  style = style + "</style>";
+
+  // Cria uma janela para exibir o conteúdo antes de imprimir
+  var win = window.open('', '', 'height=700,width=700');
+
+  win.document.write('<html><head>');
+  win.document.write('<title>Usuarios</title>');   
+  win.document.write(style);        
+  win.document.write('</head>');
+  win.document.write('<body>');
+  win.document.write(sTable);         
+  win.document.write('</body></html>');
+
+  win.document.close(); 
+
+  win.print();    
+}

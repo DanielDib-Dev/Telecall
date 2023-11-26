@@ -1483,31 +1483,37 @@ div, img{
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     text-align: center;
+    background-color: var(--cor-fundo);
 }
 
 .error h2{
     font-size: 60px;
     margin: 5px 10px;
     font-weight: 500;
+    color: var(--cor-letra);
+}
+
+.error p{
+    color: var(--cor-letra);
 }
 
 .error a{
     text-decoration: none;
-    background-color: var(--cor-h1);
-    color: var(--cor-fundo2);
+    background-color: var(--cor-nav);
+    color: var(--cor-letra);
     padding: 15px 15px;
     margin-top: 10px;
     display: inline-block;
     border-radius: 25px;
-    font-size: 14px;
-    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
     transition: 0.4s;
 }
 
 .error a:hover {
-    background-color: #0969c4;
+    background-color: var(--cor-navhover);
 }
 
 /**Fim do css da pg de Erro**/
@@ -1725,10 +1731,18 @@ div, img{
 .consulta-table{
     width: 50%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .pesquisa-table{
     margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .pesquisa-table{
@@ -1738,12 +1752,12 @@ div, img{
     padding-top: 50px;
 }
 
-.consulta-table table{
+.consulta-table #tabelaUsuarios, table{
     border-collapse: collapse;
     width: 100%;
 }
 
-.consulta-table table, th, td{
+.consulta-table #tabelaUsuarios, table, th, td{
     color: var(--cor-letra);
     border: 1px solid var(--cor-nav);
 }
@@ -1768,10 +1782,20 @@ div, img{
     color: #c50010;
 }
 
+.delete-botao{
+    color: #ca1c2a;
+    transition: 0.5s;
+}
+
+.delete-botao:hover{
+    color: #b81b28;
+    font-size: 22px;
+}
+
 @media (max-width: 702px) {
     .consulta-table{
         width: 90%;
-        margin: 10px auto;
+        margin: 0px auto 10px;
     }
 }
 
@@ -1896,4 +1920,14 @@ div, img{
 
 .botao:hover{
     background-color: var(--cor-navhover);
+}
+
+.botao-reset{
+    border-radius: 50%;
+    width: 34px;
+}
+
+#exportarPDF{
+    justify-self: center;
+    margin: 10px 0;
 }

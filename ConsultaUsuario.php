@@ -18,47 +18,55 @@
             <form action="" method="get" class="pesquisa-table">
                 <label for="pesquisa">Pesquisar por nome:</label>
                 <input name="pesquisa" class="pesquisa-input" type="text" id="pesquisa" placeholder="Digite o nome">
-                <button type="submit" class="botao">Pesquisar</button>
+                <div>
+                    <button type="submit" class="botao">Pesquisar</button>
+                    <button href="ConsultaUsuario.php" class=" botao botao-reset"><i class="fa-solid fa-arrow-rotate-right"></i></button>
+                </div>
             </form>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome do Usuário</th>
-                        <th class="delete-coluna">Excluir</th>
-                    </tr>
-                </thead>
-                <?php 
-                    if (isset($_GET['pesquisa'])) {
-                        $pesquisa = $_GET["pesquisa"];
-                        $query = "SELECT * FROM usuario WHERE nome LIKE '%$pesquisa%' AND perfil = 1";
-                        $result = mysqli_query($conn, $query);
-                    } else {
-                        // Se a página foi acessada pela primeira vez ou sem pesquisa, mostrar todos os usuários
-                        $query = "SELECT * FROM usuario WHERE perfil = 1";
-                        $result = mysqli_query($conn, $query);
-                    }
-
-                    // Exibir resultados em uma tabela
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo "
-                            <tr>
-                                <td width='50px'>{$row['idUsuario']}</td>
-                                <td>{$row['nome']}</td>
-                                <td class='delete-icon'><i class='fa-solid fa-trash'></i></td>
-                            </tr>";
+            <div id="tabelaUsuarios">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome do Usuário</th>
+                            <th class="delete-coluna">Excluir</th>
+                        </tr>
+                    </thead>
+                    <?php 
+                        if (isset($_GET['pesquisa'])) {
+                            $pesquisa = $_GET["pesquisa"];
+                            $query = "SELECT * FROM usuario WHERE nome LIKE '%$pesquisa%' AND perfil = 1";
+                            $result = mysqli_query($conn, $query);
+                        } else {
+                            // Se a página foi acessada pela primeira vez ou sem pesquisa, mostrar todos os usuários
+                            $query = "SELECT * FROM usuario WHERE perfil = 1";
+                            $result = mysqli_query($conn, $query);
                         }
-                        echo "</table>";
-                    } else {
-                        echo "
+
+                        // Exibir resultados em uma tabela
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo "
                                 <tr>
-                                    <td colspan='3'>Nenhum usuário foi encontrado.</td>
-                                </tr>
-                            </table>";
-                    }
-                ?>
-            </table>
+                                    <td width='50px'>{$row['idUsuario']}</td>
+                                    <td>{$row['nome']}</td>
+                                    <td class='delete-icon'>
+                                        <a href='#' class='delete-botao' data-id='{$row['idUsuario']}'><i class='fa-solid fa-trash'></i></a>
+                                    </td>
+                                </tr>";
+                            }
+                            echo "</table>";
+                        } else {
+                            echo "
+                                    <tr>
+                                        <td colspan='3'>Nenhum usuário foi encontrado.</td>
+                                    </tr>
+                                </table>";
+                        }
+                    ?>
+                </table>
+            </div>
+            <button id="exportarPDF" class="botao" onclick="createPDF()">Exportar para PDF</button>
         </div>
     </div>
     <?php include_once 'footer.php'; ?> 
